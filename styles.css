@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%; 
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 900px;
+  height: 900px;
+  margin: auto;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+}
+
+.red {
+  background-color: #ff420e;
+}
+
+.pink {
+  background-color: #fa6775;
+}
+
+.orange {
+  background-color: #f9a603;
+}
+
+.yellow {
+  background-color: #ebdf00;
+}
+
+.green {
+  background-color: #598234;
+}
+
+.teal {
+  background-color: #07575b;
+}
+
+.blue {
+  background-color: #4d6480;
+}
+
+.purple {
+  background-color: #4c3f54;
+}
