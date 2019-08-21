@@ -21,34 +21,34 @@ html, body {
   height: 200px;
 }
 
-.red {
+.background-red {
   background-color: #ff420e;
 }
 
-.pink {
+.background-pink {
   background-color: #fa6775;
 }
 
-.orange {
+.background-orange {
   background-color: #f9a603;
 }
 
-.yellow {
+.background-yellow {
   background-color: #ebdf00;
 }
 
-.green {
+.background-green {
   background-color: #598234;
 }
 
-.teal {
+.background-teal {
   background-color: #07575b;
 }
 
-.blue {
+.background-blue {
   background-color: #4d6480;
 }
 
-.purple {
+.background-purple {
   background-color: #4c3f54;
 }
