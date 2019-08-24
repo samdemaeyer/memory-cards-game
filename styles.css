@@ -10,15 +10,20 @@ html, body {
 .container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  width: 900px;
-  height: 900px;
+  justify-content: center;
+  max-width: 900px;
   margin: auto;
 }
 
 .card {
   width: 200px;
   height: 200px;
+  border-radius: 10px;
+  margin: 0.3rem;
+}
+
+.card-backside-color {
+  background-image: radial-gradient(circle,#f6f6f6, #83b582);
 }
 
 .background-red {
