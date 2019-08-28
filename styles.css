@@ -2,9 +2,10 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 
 .container {
@@ -15,15 +16,54 @@ html, body {
   margin: auto;
 }
 
-.card {
+.flip-card {
   width: 200px;
   height: 200px;
-  border-radius: 10px;
-  margin: 0.3rem;
+  border: 1px solid #f1f1f1;
+  margin: 5px;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
-.card-backside-color {
-  background-image: radial-gradient(circle,#f6f6f6, #83b582);
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  border-radius: 10px;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the back side (fallback if image is missing) */
+.flip-card-back {
+  background-image: radial-gradient(circle, #f6f6f6, #83b582);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the front side */
+.flip-card-front {
+  transform: rotateY(180deg);
+}
+
+.title {
+  font-size: 23px;
 }
 
 .background-red {
