@@ -57,7 +57,7 @@ body {
   justify-content: center;
 }
 
-/* Style the back side */
+/* Style the front side */
 .flip-card-front {
   transform: rotateY(180deg);
 }
