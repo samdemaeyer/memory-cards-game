@@ -49,7 +49,7 @@ body {
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
+/* Style the back side (fallback if image is missing) */
 .flip-card-back {
   background-image: radial-gradient(circle, #f6f6f6, #83b582);
   display: flex;
