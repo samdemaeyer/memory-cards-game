@@ -9,7 +9,12 @@ const colors = [
   'orange'
 ];
 
-const allColors = [...colors, ...colors];
+const totalArrayLength = 10;
+
+const allColors = [
+  ...colors.slice(0, eval(totalArrayLength / 2)),
+  ...colors.slice(0, eval(totalArrayLength / 2))
+];
 
 function shuffle(array) {
   array.sort(function() {
