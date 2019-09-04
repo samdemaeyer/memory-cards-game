@@ -11,10 +11,9 @@ const colors = [
 
 const totalArrayLength = 10;
 
-const allColors = [
-  ...colors.slice(0, eval(totalArrayLength / 2)),
-  ...colors.slice(0, eval(totalArrayLength / 2))
-];
+const oneSetOfColors = colors.slice(0, totalArrayLength / 2);
+
+const allColors = [...oneSetOfColors, ...oneSetOfColors];
 
 function shuffle(array) {
   array.sort(function() {
