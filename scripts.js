@@ -1,3 +1,4 @@
+const totalArrayLength = 10;
 const colors = [
   'green',
   'blue',
@@ -7,7 +8,7 @@ const colors = [
   'red',
   'yellow',
   'orange'
-];
+].slice(0, totalArrayLength / 2);
 
 const allColors = [...colors, ...colors];
 
