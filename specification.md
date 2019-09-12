@@ -1,0 +1,4 @@
+- When I click on a card, the card should flip.
+- If there is already a card flipped,
+  - If it has the same colour as the card I just clicked on, then both cards remain flipped.
+  - If the card I just clicked was not the same colour, then both cards should flip back.
