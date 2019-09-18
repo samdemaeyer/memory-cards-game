@@ -1,6 +1,7 @@
 let totalArrayLength = 16;
 let prevClickedCard;
 let matchedColorsCount;
+let totalColors = totalArrayLength / 2;
 
 // An array of one set of colors, two sets will be needed for the game;
 // the length of the array depends on the value of the totalArrayLength variable.
@@ -13,16 +14,14 @@ const colors = [
   'red',
   'yellow',
   'orange'
-].slice(0, totalArrayLength / 2);
+].slice(0, totalColors);
 
 //An array with the total number of colors used in the game
 const allColors = [...colors, ...colors];
 
 //Function which randomly position items on the page
 function shuffle(array) {
-  array.sort(function() {
-    return Math.random() - 0.5;
-  });
+  array.sort(() => Math.random() - 0.5);
 }
 
 //Call the function that itiniates the game
@@ -31,8 +30,11 @@ buildGame();
 //Function that itiniates the game:
 //a card is created for each color from the allColors array, the cards are positioned randomly, and the number of the cards which colors matched is (re)set to 0.
 function buildGame() {
+  // Create cards for each color
   allColors.forEach(color => createCard(color));
+  // Shuffle all collors in the array
   shuffle(allColors);
+  // reset matched count
   matchedColorsCount = 0;
 }
 
@@ -77,7 +79,7 @@ function clickCard(clickEvent) {
 
     //if colors do not match, flip both cards back after 800ms
     if (!cardsMatch) {
-      setTimeout(function() {
+      setTimeout(() => {
         currentClickedCard.classList.remove('flipped');
         prevClickedCard.classList.remove('flipped');
       }, 800);
@@ -87,12 +89,12 @@ function clickCard(clickEvent) {
     } else {
       matchedColorsCount++;
       //if yes - all the cards flip back, then they are removed from the page, and the game starts again.
-      if (matchedColorsCount === totalArrayLength / 2) {
-        setTimeout(function() {
-          document.querySelectorAll('.flip-card').forEach(function(card) {
+      if (matchedColorsCount === totalColors) {
+        setTimeout(() => {
+          document.querySelectorAll('.flip-card').forEach(card => {
             card.classList.remove('flipped');
           });
-          setTimeout(function() {
+          setTimeout(() => {
             document.querySelector('.container').innerHTML = '';
             buildGame();
           }, 800);
@@ -101,8 +103,6 @@ function clickCard(clickEvent) {
     }
     //No matter if the colors match or not, after the color comparison is done,
     //the previosuly clicked card is set to null after 800ms, so the next round will start with (!prevClickedCard)
-    setTimeout(function() {
-      prevClickedCard = null;
-    }, 800);
+    setTimeout(() => (prevClickedCard = null), 800);
   }
 }
